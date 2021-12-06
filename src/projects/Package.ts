@@ -1,17 +1,17 @@
 export interface Package {
   name: PackageT;
-  experience_level: 'none' | 'beginner' | 'intermediate' | 'advanced';
-  language: Language | Language[];
+  description: string;
+  experience_level: 'Beginner' | 'Intermediate' | 'Advanced';
+  language: Language;
 }
 
 type Language =
   'HTML' | 'JSX' | 'CSS' | 'SASS' |
-  'JavaScript' | 'TypeScript' |
-  'Python' | 'PHP' | 'CLI' |
+  'JavaScript' | 'TypeScript' | 'Python' | 'PHP' | 'CLI' |
   'MySQL' | 'MongoDB';
 
 type PackageT =
-  'Axios' | 'Express' | 'Moment' |
+  'Axios' | 'Express' | 'Moment' | 'Parcel' | 'Json Server' | 'TypeScript' |
   'React' | 'React Router' | 'Redux' | 'React-Redux' | 'Redux-Thunk' | 'Mongoose' |
   'Angular' | 'RxJS' |
   'pandas' |
@@ -21,82 +21,116 @@ type PackageT =
 export const Packages: { [key: string]: Package } = {
   react: {
     name: 'React',
-    experience_level: 'intermediate',
+    description: 'FrontEnd Javascript Framework',
+    experience_level: 'Intermediate',
     language: "JavaScript"
   },
   reactRouter: {
     name: "React Router",
-    experience_level: 'beginner',
+    description: 'URL Routing for React',
+    experience_level: 'Beginner',
     language: 'JavaScript'
   },
   redux: {
     name: 'Redux',
-    experience_level: 'intermediate',
+    description: 'State Maintenenace Package',
+    experience_level: 'Intermediate',
     language: 'JavaScript'
   },
   reactRedux: {
     name: 'React-Redux',
-    experience_level: 'intermediate',
+    description: 'Bridge For React and Redux',
+    experience_level: 'Intermediate',
     language: 'JavaScript'
   },
   reduxThunk: {
     name: 'Redux-Thunk',
-    experience_level: 'intermediate',
+    description: 'Redux middleware to allow asynchronous operations',
+    experience_level: 'Intermediate',
     language: 'JavaScript'
   },
   mongoose: {
     name: 'Mongoose',
-    experience_level: 'beginner',
+    description: 'Package for use with MongoDB and Node',
+    experience_level: 'Beginner',
     language: 'MongoDB'
   },
   axios: {
     name: 'Axios',
-    experience_level: 'advanced',
+    description: 'HTTP Requests',
+    experience_level: 'Advanced',
     language: 'JavaScript'
   },
   express: {
     name: 'Express',
-    experience_level: 'intermediate',
+    description: 'Creates a Node.js server',
+    experience_level: 'Intermediate',
     language: 'JavaScript'
+  },
+  typeScript: {
+    name: 'TypeScript',
+    description: 'Package that type-checks code',
+    experience_level: 'Intermediate',
+    language: 'TypeScript'
+  },
+  jsonServer: {
+    name: 'Json Server',
+    description: 'A basic express app that creates a RESTful API using a json file as a database',
+    experience_level: 'Intermediate',
+    language: 'JavaScript'
+  },
+  parcel: {
+    name: 'Parcel',
+    description: 'A lightweight package that bundles static files from underlying Javascript',
+    experience_level: 'Intermediate',
+    language: 'CLI'
   },
   angular: {
     name: 'Angular',
-    experience_level: 'intermediate',
+    description: 'FrontEnd Javascript Framework',
+    experience_level: 'Intermediate',
     language: 'TypeScript'
   },
   rxjs: {
     name: 'RxJS',
-    experience_level: 'intermediate',
+    description: 'Powerful event handling package',
+    experience_level: 'Intermediate',
     language: 'TypeScript'
   },
   pandas: {
     name: 'pandas',
-    experience_level: 'beginner',
+    description: 'Data Processing',
+    experience_level: 'Beginner',
     language: 'Python'
   },
   laravel: {
     name: 'Laravel',
-    experience_level: 'advanced',
+    description: 'BackEnd PHP Framework',
+    experience_level: 'Advanced',
     language: 'PHP'
   },
   semanticCss: {
     name: 'Semantic UI CSS',
-    experience_level: 'advanced',
+    description: 'CSS Framework',
+    experience_level: 'Advanced',
     language: 'CSS'
   },
   angularMaterial: {
     name: 'Angular Material',
-    experience_level: 'intermediate',
-    language: ['TypeScript', 'CSS']
+    description: 'UI components',
+    experience_level: 'Beginner',
+    language: 'TypeScript'
   },
   bulma: {
     name: 'Bulma',
-    experience_level: 'beginner',
-    language: ['HTML', 'CSS']
+    description: 'CSS Framework',
+    experience_level: 'Beginner',
+    language: 'CSS'
   },
   moment: {
     name: 'Moment',
-    experience_level: 'advanced',
+    description: 'Powerful Date-Time package',
+    experience_level: 'Advanced',
     language: 'JavaScript'
   }
 }
