@@ -1,28 +1,29 @@
 export interface Package {
-  name: PackageT;
+  name: PackageName;
   description: string;
   experience_level: 'Beginner' | 'Intermediate' | 'Advanced';
   language: Language;
 }
 
-type Language =
+export type Language =
   'HTML' | 'JSX' | 'CSS' | 'SASS' |
   'JavaScript' | 'TypeScript' | 'Python' | 'PHP' | 'CLI' |
   'MySQL' | 'MongoDB';
 
-type PackageT =
+export type PackageName =
   'Axios' | 'Express' | 'Moment' | 'Parcel' | 'Json Server' | 'TypeScript' |
   'React' | 'React Router' | 'Redux' | 'React-Redux' | 'Redux-Thunk' | 'Mongoose' |
-  'Angular' | 'RxJS' |
-  'pandas' |
-  'Laravel' |
-  'Semantic UI CSS' | 'Angular Material' | 'Bulma'
+  'Angular' | 'RxJS' | 'jQuery' |
+  'Pandas' | 'Git' |
+  'Laravel' | 'Composer' | 'NPM' |
+  'Semantic UI CSS' | 'Sass' | 'Angular Material' | 'Bulma';
 
-export const Packages: { [key: string]: Package } = {
+
+export const PackageList: { [key: string]: Package } = {
   react: {
     name: 'React',
     description: 'FrontEnd Javascript Framework',
-    experience_level: 'Intermediate',
+    experience_level: 'Advanced',
     language: "JavaScript"
   },
   reactRouter: {
@@ -34,19 +35,19 @@ export const Packages: { [key: string]: Package } = {
   redux: {
     name: 'Redux',
     description: 'State Maintenenace Package',
-    experience_level: 'Intermediate',
+    experience_level: 'Advanced',
     language: 'JavaScript'
   },
   reactRedux: {
     name: 'React-Redux',
     description: 'Bridge For React and Redux',
-    experience_level: 'Intermediate',
+    experience_level: 'Advanced',
     language: 'JavaScript'
   },
   reduxThunk: {
     name: 'Redux-Thunk',
     description: 'Redux middleware to allow asynchronous operations',
-    experience_level: 'Intermediate',
+    experience_level: 'Advanced',
     language: 'JavaScript'
   },
   mongoose: {
@@ -70,7 +71,7 @@ export const Packages: { [key: string]: Package } = {
   typeScript: {
     name: 'TypeScript',
     description: 'Package that type-checks code',
-    experience_level: 'Intermediate',
+    experience_level: 'Advanced',
     language: 'TypeScript'
   },
   jsonServer: {
@@ -97,8 +98,20 @@ export const Packages: { [key: string]: Package } = {
     experience_level: 'Intermediate',
     language: 'TypeScript'
   },
+  git: {
+    name: 'Git',
+    description: 'Version manager',
+    language: 'CLI',
+    experience_level: 'Intermediate'
+  },
+  jquery: {
+    name: 'jQuery',
+    description: 'Javascript library',
+    language: 'JavaScript',
+    experience_level: 'Advanced'
+  },
   pandas: {
-    name: 'pandas',
+    name: 'Pandas',
     description: 'Data Processing',
     experience_level: 'Beginner',
     language: 'Python'
@@ -112,6 +125,12 @@ export const Packages: { [key: string]: Package } = {
   semanticCss: {
     name: 'Semantic UI CSS',
     description: 'CSS Framework',
+    experience_level: 'Advanced',
+    language: 'CSS'
+  },
+  sass: {
+    name: 'Sass',
+    description: 'Powerful CSS preprocessor',
     experience_level: 'Advanced',
     language: 'CSS'
   },
@@ -132,5 +151,17 @@ export const Packages: { [key: string]: Package } = {
     description: 'Powerful Date-Time package',
     experience_level: 'Advanced',
     language: 'JavaScript'
-  }
+  },
+  composer: {
+    name: 'Composer',
+    description: 'PHP package manager',
+    experience_level: 'Advanced',
+    language: "CLI"
+  },
+  npm: {
+    name: 'NPM',
+    description: 'JavaScript package manager',
+    experience_level: 'Advanced',
+    language: "CLI"
+  },
 }
