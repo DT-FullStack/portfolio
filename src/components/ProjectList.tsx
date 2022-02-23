@@ -16,13 +16,13 @@ const Projects = (props: Props) => {
 
   return (
     <div className="ui basic segment">
-      <h3 className="ui header large green">Projects</h3>
-      <div id="ProjectCollection" className="ui two cards stacking">
+      <h3 className="ui header large green">Showcased Projects</h3>
+      <div id="ProjectCollection" className="ui cards stacking stretch">
         {
           Object.values(majorProjects).map(project => <ProjectCard key={project.name} project={project} />)
         }
       </div>
-      <h3 className='ui header large green toggle' onClick={toggle}><i className={arrowClass()}></i>Additional Minor Projects</h3>
+      <h3 className='ui header large green toggle' onClick={toggle}><i className={arrowClass()}></i>Minor Projects{!showingMinor && ` (${minorProjects.length})`}</h3>
       {showingMinor && (
         <div id="MinorProjectCollection" className="ui two cards stacking">
           {

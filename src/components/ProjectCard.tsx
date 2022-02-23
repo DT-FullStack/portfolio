@@ -5,7 +5,7 @@ interface Props {
   project: Project
 }
 
-const ProjectCard = ({ project: { name, type, description, highlights, packages, github, host } }: Props) => {
+const ProjectCard = ({ project: { name, type, description, notes = [], highlights, packages, github, host } }: Props) => {
   return (
     <div key={name} className="ui card">
       <div className="content">
@@ -13,6 +13,7 @@ const ProjectCard = ({ project: { name, type, description, highlights, packages,
         <div className="meta">{type} Design</div>
         <div className="description">
           {description.map((desc, d) => <p key={d}>{desc}</p>)}
+          {notes.map((note, n) => <p key={n}><i>* {note}</i></p>)}
           {highlights && (
             <div className='section'>
               <div className="ui header small">Highlights</div>

@@ -1,24 +1,54 @@
 @import 'variables'
-  
+
+@function css-function( $function, $values... ) 
+	@return $function		+ unquote( '(' )		+ $values		+ unquote( ')' )
+
+@function css-min( $values... ) 
+	@return css-function( min, $values )
+
+@function css-max( $values... ) 
+	@return css-function( max, $values )
+
+@function css-clamp( $values... ) 
+	@return css-function( clamp, $values )
+
 .ui
+
+  .segment
+    > .button
+      margin-bottom: 5px
 
   &.header
     &.huger
       font-size: 3em
 
+  &.buttons
+    &.wrap
+      flex-wrap: wrap
+
   &.cards
     &.stretch
       > .card
-        flex-grow: 1
+        flex: 1 0 auto
 
   &.card
     .extra.content.labels
+      display: flex
+      justify-content: space-between
+      &::after
+        display: none
       .label
         margin: 2px 1px
 
 #ProjectCollection, #MinorProjectCollection
   .header.green
     color: rgb(33, 186, 69)
+
+  .ui.buttons
+    &.wrap
+      flex-wrap: wrap
+  .ui.card
+    flex-basis: css-min(21em, 100%)
 
   .description
     .section
@@ -41,11 +71,10 @@
           cursor: default
           &:hover
             background-color: rgb(210,210,210)
-      // &:hover
-      //   .header.small
-      //     color: rgb(33, 186, 69)
-      //   .ui.labels
-      //     opacity: 1
+
+#SkillsCollection
+  .ui.card
+    flex-basis: css-min(16em, 100%)
 
 .toggle 
   cursor: pointer

@@ -53,7 +53,7 @@ const Skills = (props: Props) => {
 
       </div>
       <div id="SkillsCollection">
-        <div className="ui doubling cards">
+        <div className="ui stacking stretch cards">
           {
             Object.values(SortedPkgs()).map((pkg: PackageWithStats) => <SkillCard key={pkg.name} skill={pkg} proficiencySort={useProficiencySort} languageSort={useLanguageSort} />)
           }
