@@ -22,14 +22,6 @@ const Projects = (props: Props) => {
           Object.values(majorProjects).map(project => <ProjectCard key={project.name} project={project} />)
         }
       </div>
-      <h3 className='ui header large green toggle' onClick={toggle}><i className={arrowClass()}></i>Minor Projects{!showingMinor && ` (${minorProjects.length})`}</h3>
-      {showingMinor && (
-        <div id="MinorProjectCollection" className="ui two cards stacking">
-          {
-            Object.values(minorProjects).map(project => <ProjectCard key={project.name} project={project} />)
-          }
-        </div>
-      )}
     </div>
   )
 }
