@@ -9,10 +9,10 @@ interface Props {
 
 const Projects = (props: Props) => {
   const majorProjects = Object.values(ProjectList).filter(({ minorProject }) => !minorProject);
-  const minorProjects = Object.values(ProjectList).filter(({ minorProject }) => minorProject);
+  // const minorProjects = Object.values(ProjectList).filter(({ minorProject }) => minorProject);
   const [showingMinor, setShowingMinor] = useState(false);
-  const arrowClass = () => showingMinor ? 'angle right spin90 icon' : 'angle right icon';
-  const toggle = () => setShowingMinor(!showingMinor);
+  // const arrowClass = () => showingMinor ? 'angle right spin90 icon' : 'angle right icon';
+  // const toggle = () => setShowingMinor(!showingMinor);
 
   return (
     <div className="ui basic segment">
